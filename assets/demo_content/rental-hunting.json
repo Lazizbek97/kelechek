@@ -1,0 +1,80 @@
+[
+    {
+      "name": "Коттедж",
+      "price": 9301,
+      "currency": "KGS",
+      "occupancy": 2,
+      "room_type": "1 ночь, 2 взрослых",
+      "check_in": "2024-03-12",
+      "check_out": "2024-05-13",
+      "amenities": [
+        {"id": "wifi", "name": "Wi-Fi"},
+        {"id": "parking", "name": "Parking"},
+        {"id": "bath", "name": "Bath"}
+      ],
+      "nutritions": [
+        {"id": "breakfast", "name": "Breakfast"},
+        {"id": "lunch", "name": "Lunch"},
+        {"id": "dinner", "name": "Dinner"}
+      ],
+      "tips": [
+        {"id": "cottage", "name": "Cottage"},
+        {"id": "tapchan", "name": "Tapchan"},
+        {"id": "number", "name": "Number"}
+      ],
+      "images": ["assets/image/hunting1.png"],
+      "contact": [
+        {"type": "phone", "number": "+7 495 123-45-67"},
+        {"type": "chat", "link": "nomadinn@reservations.com"}
+      ],
+      "description": "Дом с 2  спальнями. В распоряжении гостей терраса. В числе удобств — собственный бассейн, бесплатная частная парковка и бесплатный Wi-Fi.",
+      "address": {
+        "name": "Бишкек,​Зона отдыха \"Фазенда\"",
+        "location": {
+          "latitude": 55.755826,
+          "longitude": 37.617299
+        }
+      },
+      "room_size": ""
+    },
+    {
+      "name": "Тапчан ",
+      "price": 3049,
+      "currency": "KGS",
+      "occupancy": 3,
+      "room_type": "1 день",
+      "check_in": "2024-04-12",
+      "check_out": "2024-08-13",
+      "amenities": [
+        {"id": "wifi", "name": "Wi-Fi"},
+        {"id": "parking", "name": "Parking"},
+        {"id": "bath", "name": "Bath"}
+      ],
+      "nutritions": [
+        {"id": "breakfast", "name": "Breakfast"},
+        {"id": "lunch", "name": "Lunch"},
+        {"id": "dinner", "name": "Dinner"}
+      ],
+      "tips": [
+        {"id": "cottage", "name": "Cottage"},
+        {"id": "tapchan", "name": "Tapchan"},
+        {"id": "number", "name": "Number"}
+      ],
+      "images": ["assets/image/hunting2.png"],
+      "contact": [
+        {"type": "phone", "number": "+7 495 789-01-23"},
+        {"type": "whatsup", "link": "silkroad@guesthouse.com"}
+      ],
+      "description": "Тапчан у речки на 15-20 человек 3000 сом за один день, вместе с посудой, казан, мангал, самовар, тошок",
+      "address": {
+        "name": "SilkRoad Guesthouse",
+        "location": {
+          "latitude": 55.761250,
+          "longitude": 37.618421
+        }
+      },
+      "room_size": ""
+    }
+   
+  ]
+  

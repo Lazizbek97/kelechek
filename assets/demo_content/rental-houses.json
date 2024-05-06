@@ -1,0 +1,154 @@
+[
+    {
+      "name": "Nomad Inn",
+      "price": 1921,
+      "currency": "KGS",
+      "occupancy": 2,
+      "room_type": "Double room with 1 king bed or 2 single beds",
+      "check_in": "2024-03-12",
+      "check_out": "2025-03-13",
+      "amenities": [
+        {"id": "wifi", "name": "Wi-Fi"},
+        {"id": "parking", "name": "Parking"},
+        {"id": "bath", "name": "Bath"}
+      ],
+      "services": [
+        {"id": "housekeeping", "name": "Daily housekeeping"}
+      ],
+      "images": ["assets/image/house.png"],
+      "contact": [
+        {"type": "phone", "number": "+7 495 123-45-67"},
+        {"type": "chat", "link": "nomadinn@reservations.com"}
+      ],
+      "description": "This well-equipped kitchen is equipped with a refrigerator, dishes, microwave, and electric kettle. The room features air conditioning and a washing machine. Guests have access to a private bathroom with a shower and slippers. 2 beds are installed.",
+      "address": {
+        "name": "Nomad Inn",
+        "location": {
+          "latitude": 55.755826,
+          "longitude": 37.617299
+        }
+      },
+      "room_size_name": "19 m²",
+      "room_size":27,
+      "nutritions": [
+        {"id": "breakfast", "name": "Breakfast"},
+        {"id": "lunch", "name": "Lunch"},
+        {"id": "dinner", "name": "Dinner"}
+      ]
+    },
+    {
+      "name": "SilkRoad Guesthouse",
+      "price": 3541,
+      "currency": "KGS",
+      "occupancy": 3,
+      "room_type": "Triple room with a queen bed",
+      "check_in": "2024-04-12",
+      "check_out": "2024-04-20",
+      "amenities": [
+        {"id": "wifi", "name": "Wi-Fi"},
+        {"id": "parking", "name": "Parking"},
+        {"id": "bath", "name": "Bath"}
+      ],
+      "services": [
+        {"id": "housekeeping", "name": "Daily housekeeping"},
+        {"id": "drycleaning", "name": "Dry cleaning"},
+        {"id": "laundry", "name": "Laundry"},
+        {"id": "transfer", "name": "Transfer"}
+      ],
+      "images": ["assets/image/silk-road.png"],
+      "contact": [
+        {"type": "phone", "number": "+7 495 789-01-23"},
+        {"type": "whatsup", "link": "silkroad@guesthouse.com"}
+      ],
+      "description": "A comfortable triple room with a queen bed. Perfect for a small group of friends or a family. Includes air conditioning, Wi-Fi, and a private bathroom.",
+      "address": {
+        "name": "SilkRoad Guesthouse",
+        "location": {
+          "latitude": 55.761250,
+          "longitude": 37.618421
+        }
+      },
+      "room_size_name": "25 m²",
+      "room_size":25,
+      "nutritions": [
+        {"id": "breakfast", "name": "Breakfast"},
+        {"id": "lunch", "name": "Lunch"},
+        {"id": "dinner", "name": "Dinner"}
+      ]
+    },
+    {
+      "name": "Floating Oasis Houseboat",
+      "price": 3100,
+      "currency": "USD",
+      "occupancy": 6,
+      "check_in": "2024-05-12",
+      "check_out": "2024-12-13",
+      "room_type": "Houseboat with 3 bedrooms",
+      "amenities": [
+        {"id": "wifi", "name": "Wi-Fi (limited)"},
+        {"id": "kitchen", "name": "Basic kitchen with stove"}
+      ],
+      "services": [
+        {"id": "linens", "name": "Linens provided"}
+      ],
+      "images": ["assets/image/silk-road.png"],
+      "contact": [
+        {"type": "phone", "number": "+1 (666) HOUSE-BOAT"},
+        {"type": "whatsup", "link": "floatingoasis@rentals.com"},
+        {"type": "chat", "link": "floatingoasis@rentals.com"}
+        
+      ],
+      "description": "Embark on an unforgettable adventure aboard the Floating Oasis houseboat! Explore the scenic waterways at your own pace. Relax on the sun deck, enjoy barbecues on the grill, or try your hand at kayaking. The houseboat features 3 bedrooms and a basic kitchen, offering a comfortable stay on the water.",
+      "address": {
+        "name": "Floating Oasis Houseboat",
+        "location": {
+          "latitude": 38.8881,
+          "longitude": -122.5776
+        }
+      },
+      "room_size_name": "56 m²",
+      "room_size":56,
+      "nutritions": [
+        {"id": "breakfast", "name": "Breakfast"},
+        {"id": "lunch", "name": "Lunch"},
+        {"id": "dinner", "name": "Dinner"}
+      ]
+    },
+    {
+      "name": "Backpackers Paradise Hostel",
+      "price": 35,
+      "currency": "USD",
+      "occupancy": 6,
+      "check_in": "2024-04-12",
+      "check_out": "2024-04-30",
+      "room_type": "Shared dormitory room",
+      "amenities": [
+        {"id": "wifi", "name": "Wi-Fi"},
+        {"id": "kitchen", "name": "Shared kitchen"}
+      ],
+      "services": [
+        {"id": "breakfast", "name": "Breakfast (additional fee)"}
+      ],
+      "images": ["assets/image/house.png"],
+      "contact": [
+        {"type": "phone", "number": "+1 (777) HOSTEL-LIFE"},
+        {"type": "chat", "link": "backpackersparadise@hostel.com"}
+      ],
+      "description": "Backpackers Paradise Hostel offers a social and budget-friendly stay. This shared dorm room provides a comfortable bed in a lively atmosphere. Guests have access to a shared kitchen, laundry facilities, and a common lounge area to meet fellow travelers. Breakfast is available for an additional fee.",
+      "address": {
+        "name": "Backpackers Paradise Hostel",
+        "location": {
+          "latitude": 37.7749,
+          "longitude": -122.4194
+        }
+      },
+      "room_size_name": "76 m²",
+      "room_size":76,
+      "nutritions": [
+        {"id": "breakfast", "name": "Breakfast"},
+        {"id": "lunch", "name": "Lunch"},
+        {"id": "dinner", "name": "Dinner"}
+      ]
+    }
+  ]
+  

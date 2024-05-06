@@ -1,0 +1,100 @@
+[
+    {
+      "name": "Happy Kids Kindergarten",
+      "address": "123 Sunshine Street",
+      "location": {
+        "latitude": 51.5074,
+        "longitude": -0.1278
+      },
+      "groups": {
+        "1-3": 2,
+        "3-5": 3,
+        "5-7": 1
+      },
+      "price": 12000,
+      "description": "A nurturing environment for young children to learn and grow.",
+      "age_filters": ["1-3", "3-5"],
+      "season_filters": ["october", "may"],
+      "images": [
+        "assets/image/kindergarden1.png",
+        "assets/image/kindergarden2.png"
+      ],
+      "contact": [
+        {"type": "phone", "number": "+7 495 123-45-67"},
+        {"type": "chat", "link": "nomadinn@reservations.com"}
+        
+      ]
+    },
+    {
+      "name": "Little Explorers Preschool",
+      "address": "456 Adventure Avenue",
+      "location": {
+        "latitude": 40.7128,
+        "longitude": -74.0060
+      },
+      "groups": {
+        "1-3": 1,
+        "3-5": 2,
+        "5-7": 1
+      },
+      "price": 11000,
+      "description": "Encouraging curiosity and discovery through play-based learning.",
+      "age_filters": ["3-5", "5-7"],
+      "season_filters": ["may", "august"],
+      "images": [
+        "assets/image/kindergarden2.png",
+        "assets/image/kindergarden3.png"
+      ],
+      "contact": [
+        {"type": "phone", "number": "+7 495 123-45-67"},
+        {"type": "chat", "link": "nomadinn@reservations.com"}
+        
+      ]
+    },
+    {
+      "name": "Creative Minds Nursery",
+      "address": "789 Artistic Avenue",
+      "location": {
+        "latitude": 34.0522,
+        "longitude": -118.2437
+      },
+      "groups": {
+        "1-3": 1,
+        "3-5": 2
+      },
+      "price": 9000,
+      "description": "Fostering imagination and self-expression through various artistic activities.",
+      "age_filters": ["1-3", "3-5"],
+      "season_filters": ["october", "august"],
+      "images": [
+        "assets/image/kindergarden3.png",
+        "assets/image/kindergarden1.png"
+      ]
+    },
+    {
+      "name": "Nature's Playground Daycare",
+      "address": "101 Forest Lane",
+      "location": {
+        "latitude": 45.4215,
+        "longitude": -75.6919
+      },
+      "groups": {
+        "3-5": 1,
+        "5-7": 2
+      },
+      "price": 12000,
+      "description": "An outdoor-focused program where children can explore and connect with nature.",
+      "age_filters": ["3-5", "5-7"],
+      "season_filters": ["october", "august"],
+      "images": [
+        "assets/image/kindergarden1.png",
+        "assets/image/kindergarden3.png"
+      ],
+      "contact": [
+        {"type": "phone", "number": "+7 495 123-45-67"},
+        {"type": "chat", "link": "nomadinn@reservations.com"}
+        
+      ]
+    }
+  ]
+  

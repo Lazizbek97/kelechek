@@ -1,0 +1,103 @@
+[
+    {
+      "name": "Офис 27 м²",
+      "price": 45000,
+      "currency": "KGS",
+      "occupancy": 2,
+      "room_type": "в месяц",
+      "check_in": "2024-03-12",
+      "check_out": "2024-03-13",
+      "amenities": [
+        {"id": "wifi", "name": "Wi-Fi"},
+        {"id": "parking", "name": "Parking"},
+        {"id": "bath", "name": "Bath"},
+        {"id": "air-conditioning", "name": "Air conditioning"}
+      ],
+      "services": [
+        {"id": "housekeeping", "name": "Daily housekeeping"}
+      ],
+      "images": ["assets/image/office.png"],
+      "contact": [
+        {"type": "phone", "number": "+7 495 123-45-67"},
+        {"type": "chat", "link": "nomadinn@reservations.com"}
+      ],
+      "description": "Сдается помещение на первом этаже 27 кв.м. бизнес-центр Кыял. Район Ошского рынка. Помещение без мебели. На длительный срок.",
+      "address": {
+        "name": "Бишкек, Проспект Чуй, 2021, 5 этаж",
+        "location": {
+          "latitude": 55.755826,
+          "longitude": 37.617299
+        }
+      },
+      "room_size_name": "27 m²",
+      "room_size":27
+    },
+    {
+      "name": "Офис 500 м²",
+      "price": 3541,
+      "currency": "KGS",
+      "occupancy": 3,
+      "room_type": "в месяц",
+      "check_in": "2024-04-12",
+      "check_out": "2025-05-30",
+      "amenities": [
+        {"id": "wifi", "name": "Wi-Fi"},
+        {"id": "parking", "name": "Parking"},
+        {"id": "bath", "name": "Bath"},
+        {"id": "kitchen", "name": "Kitchen"}
+      ],
+      "services": [
+        {"id": "housekeeping", "name": "Daily housekeeping"},
+        {"id": "drycleaning", "name": "Dry cleaning"},
+        {"id": "laundry", "name": "Laundry"},
+        {"id": "transfer", "name": "Transfer"}
+      ],
+      "images": ["assets/image/office1.png"],
+      "contact": [
+        {"type": "phone", "number": "+7 495 789-01-23"},
+        {"type": "chat", "link": ""}
+      ],
+      "description": "Сдается помещение на первом этаже 500 кв.м. бизнес-центр Кыял. Район Ошского рынка. Помещение без мебели. На длительный срок.",
+      "address": {
+        "name": "Tverskaya Street 15",
+        "location": {
+          "latitude": 55.761250,
+          "longitude": 37.618421
+        }
+      },
+      "room_size_name": "500 m²",
+      "room_size":27
+    },
+    {
+      "name": "Офис 500 м²",
+      "price": 3100,
+      "currency": "USD",
+      "occupancy": 6,
+      "room_type": "в месяц",
+      "check_in": "2024-03-12",
+      "check_out": "2024-12-13",
+      "amenities": [
+        {"id": "wifi", "name": "Wi-Fi (limited)"},
+        {"id": "kitchen", "name": "Basic kitchen with stove"}
+      ],
+      "services": [
+        {"id": "linens", "name": "Linens provided"}
+      ],
+      "images": ["assets/image/office2.png"],
+      "contact": [
+        {"type": "phone", "number": "+1 (666) HOUSE-BOAT"},
+        {"type": "chat", "link": "floatingoasis@rentals.com"}
+      ],
+      "description": "Сдается помещение на первом этаже 500 кв.м. бизнес-центр Кыял. Район Ошского рынка. Помещение без мебели. На длительный срок.",
+      "address": {
+        "name": "Marina Way",
+        "location": {
+          "latitude": 38.8881,
+          "longitude": -122.5776
+        }
+      },
+      "room_size_name": "340 m²",
+      "room_size":27
+    }
+  ]
+  

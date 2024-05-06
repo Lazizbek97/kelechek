@@ -1,0 +1,76 @@
+[
+  {
+    "name": "Sky Люкс",
+    "price": 1921,
+    "currency": "KGS",
+    "occupancy": 2,
+    "room_type": "Double room with 1 king bed or 2 single beds",
+    "check_in": "2024-04-12",
+    "check_out": "2024-06-13",
+    "floow": 1,
+    "amenities": [
+      {"id": "wifi", "name": "Wi-Fi"},
+      {"id": "parking", "name": "Parking"},
+      {"id": "bath", "name": "Bath"}
+    ],
+    "services": [
+      {"id": "housekeeping", "name": "Daily housekeeping"}
+    ],
+    "images": ["assets/image/silk-road-hotel.png"],
+    "contact": [
+      {"type": "phone", "number": "+7 495 123-45-67"},
+      {"type": "chat", "link": "nomadinn@reservations.com"}
+      
+    ],
+    "description": "This well-equipped kitchen is equipped with a refrigerator, dishes, microwave, and electric kettle. The room features air conditioning and a washing machine. Guests have access to a private bathroom with a shower and slippers. 2 beds are installed.",
+    "address": {
+      "name": "Nomad Inn",
+      "location": {
+        "latitude": 55.755826,
+        "longitude": 37.617299
+      }
+    },
+    "room_size_name": "27 m²",
+    "room_size":27,
+    "room_level":"standard"
+  },
+  {
+    "name": "SilkRoad Standart",
+    "price": 3541,
+    "currency": "KGS",
+    "occupancy": 3,
+    "floow": 3,
+    "room_type": "Triple room with a queen bed",
+    "check_in": "2024-04-12",
+    "check_out": "2025-04-13",
+    "amenities": [
+      {"id": "wifi", "name": "Wi-Fi"},
+      {"id": "parking", "name": "Parking"},
+      {"id": "bath", "name": "Bath"}
+    ],
+    "services": [
+      {"id": "housekeeping", "name": "Daily housekeeping"},
+      {"id": "drycleaning", "name": "Dry cleaning"},
+      {"id": "laundry", "name": "Laundry"},
+      {"id": "transfer", "name": "Transfer"}
+    ],
+    "images": ["assets/image/sky-lux-hotel.png"],
+    "contact": [
+      {"type": "phone", "number": "+7 495 789-01-23"},
+      {"type": "whatsup", "link": "silkroad@guesthouse.com"},
+      {"type": "chat", "link": "silkroad@guesthouse.com"}
+    ],
+    "description": "A comfortable triple room with a queen bed. Perfect for a small group of friends or a family. Includes air conditioning, Wi-Fi, and a private bathroom.",
+    "address": {
+      "name": "SilkRoad Guesthouse",
+      "location": {
+        "latitude": 55.761250,
+        "longitude": 37.618421
+      }
+    },
+        "room_size_name": "25 m²",
+      "room_size":25,
+      "room_level":"lux"
+  }
+ 
+]
