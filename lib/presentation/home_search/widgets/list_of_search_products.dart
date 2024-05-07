@@ -5,6 +5,7 @@ import 'package:kelechek/presentation/hunting_farm/widgets/hunting_farms_details
 import 'package:kelechek/presentation/kindergardens/domain/models/kindergarden_list_md.dart';
 import 'package:kelechek/presentation/kindergardens/widgets/kindergarden_details_screen.dart';
 import 'package:kelechek/presentation/rent_office_premises/domain/model/office_premesis_md.dart';
+import 'package:kelechek/presentation/rent_office_premises/domain/model/products_list_model.dart';
 import 'package:kelechek/presentation/rent_office_premises/office_details/office_details_screen.dart';
 import 'package:kelechek/presentation/rental_home/domain/models/rental_homes_list.dart';
 import 'package:kelechek/presentation/rental_home/widgets/rental_home_details_screen.dart';
@@ -56,7 +57,7 @@ class ListOfSearchProducts extends StatelessWidget {
                     if (data[index].pageId == 'kiyal') {
                       navigateTo(
                         OfficePremisesDetailsScreen(
-                          kiyal: data[index].data as KiyalListMd,
+                          kiyal: ProductsListModel(),
                           productId:0,
                         ),
                         context,

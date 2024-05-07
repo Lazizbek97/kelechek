@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:kelechek/core/common/widgets/custom_image_view.dart';
 import 'package:kelechek/core/constants/constants.dart';
+import 'package:kelechek/l10n/l10n.dart';
 import 'package:kelechek/presentation/rent_office_premises/domain/model/office_premesis_md.dart';
 import 'package:kelechek/presentation/rent_office_premises/domain/model/products_list_model.dart';
+import 'package:kelechek/presentation/rent_office_premises/domain/repository/office_premesis_repository.dart';
 import 'package:kelechek/presentation/rent_office_premises/office_details/office_details_screen.dart';
 
 class OfficePremisesCardWidget extends StatefulWidget {
@@ -21,6 +23,7 @@ class _OfficePremisesCardWidgetState extends State<OfficePremisesCardWidget> {
   bool _isTapped = false;
   @override
   Widget build(BuildContext context) {
+    final l10 = context.l10n;
     String? imageUrl = '';
     if (widget.kiyal.values?.isNotEmpty ?? false) {
       try {
@@ -36,10 +39,7 @@ class _OfficePremisesCardWidgetState extends State<OfficePremisesCardWidget> {
       onTap: () {
         Navigator.push(
           context,
-          OfficePremisesDetailsScreen.route(
-            KiyalListMd(),
-            widget.kiyal.id??0
-          ),
+          OfficePremisesDetailsScreen.route(widget.kiyal, widget.kiyal.id ?? 0),
         );
       },
       onTapDown: (details) => setState(() {
@@ -100,7 +100,7 @@ class _OfficePremisesCardWidgetState extends State<OfficePremisesCardWidget> {
                     ),
                     const SizedBox(height: 5),
                     Text(
-                      widget.kiyal.entity?.title ?? '',
+                      "${OfficePremesisRepository().getShortDesc(widget.kiyal, l10) ?? ''}",
                       style: AppTextStyle.s10.copyWith(
                         color:
                             _isTapped ? AppColors.white : AppColors.silverGray,

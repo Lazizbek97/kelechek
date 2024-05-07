@@ -23,13 +23,15 @@ class UserMoodelAdapter extends TypeAdapter<UserMoodel> {
       inn: fields[3] as String,
       isForiegner: fields[4] as bool,
       userBall: fields[5] as int,
+      userId: fields[6] as int,
+      isVerified: fields[7] as bool,
     );
   }
 
   @override
   void write(BinaryWriter writer, UserMoodel obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(8)
       ..writeByte(0)
       ..write(obj.fulllName)
       ..writeByte(1)
@@ -41,7 +43,11 @@ class UserMoodelAdapter extends TypeAdapter<UserMoodel> {
       ..writeByte(4)
       ..write(obj.isForiegner)
       ..writeByte(5)
-      ..write(obj.userBall);
+      ..write(obj.userBall)
+      ..writeByte(6)
+      ..write(obj.userId)
+      ..writeByte(7)
+      ..write(obj.isVerified);
   }
 
   @override

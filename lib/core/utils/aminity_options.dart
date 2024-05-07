@@ -13,10 +13,10 @@ class AmenityOption {
 }
 
 Map<String, AmenityOption> aminityOptions(BuildContext context) => {
-      'wifi': AmenityOption(
+      ' Wi-Fi': AmenityOption(
         iconPath: 'assets/svg/wifi.svg',
         text: context.l10n.wifi,
-        id: 'wifi',
+        id: ' Wi-Fi',
       ),
       'parking': AmenityOption(
         iconPath: 'assets/svg/carFilled.svg',

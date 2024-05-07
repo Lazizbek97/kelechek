@@ -18,6 +18,8 @@ import 'package:kelechek/presentation/main_app/cubit/main_app_cubit.dart';
 import 'package:kelechek/presentation/map/map_widget.dart';
 import 'package:kelechek/presentation/map/service/location_service.dart';
 import 'package:kelechek/presentation/rent_office_premises/domain/model/office_premesis_md.dart';
+import 'package:kelechek/presentation/rent_office_premises/domain/model/products_list_model.dart';
+import 'package:kelechek/presentation/rent_office_premises/domain/repository/office_premesis_repository.dart';
 import 'package:kelechek/presentation/user_indentification/view/current_order_details_screen.dart';
 import 'package:kelechek/presentation/user_indentification/view/user_passport_and_id_selection_screen.dart';
 
@@ -25,11 +27,11 @@ class OfficePremisesDetailsScreen extends StatefulWidget {
   const OfficePremisesDetailsScreen(
       {required this.kiyal, super.key, required this.productId});
 
-  final KiyalListMd kiyal;
+  final ProductsListModel kiyal;
   final int productId;
 
   static Route<void> route(
-    KiyalListMd kiyal,
+    ProductsListModel kiyal,
     int productId,
   ) {
     return MaterialPageRoute<void>(
@@ -84,7 +86,9 @@ class _OfficePremisesDetailsScreenState
                         imageIndex = value + 1;
                       });
                     },
-                    children: (widget.kiyal.images ?? [])
+                    children: (OfficePremesisRepository()
+                                .getProductImage(widget.kiyal) ??
+                            [])
                         .map(
                           (image) => CustomImageView(
                             imagePath: image,
@@ -110,7 +114,7 @@ class _OfficePremisesDetailsScreenState
                         ),
                       ),
                       child: Text(
-                        '${imageIndex + 1}/${widget.kiyal.images?.length}',
+                        '${imageIndex + 1}/${OfficePremesisRepository().getProductImage(widget.kiyal).length}',
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                               color: AppColors.blueGray,
                             ),
@@ -130,45 +134,50 @@ class _OfficePremisesDetailsScreenState
                   child: Row(
                     children: [
                       Text(
-                        widget.kiyal.name ?? '',
+                        OfficePremesisRepository()
+                                .getProductName(widget.kiyal, l10) ??
+                            '',
                         style: AppTextStyle.s23,
                       ),
-                      const Spacer(),
-                      ...List.generate(
-                        widget.kiyal.contact?.length ?? 0,
-                        (index) => Padding(
-                          padding: const EdgeInsets.only(left: 8),
-                          child: CstIconButton(
-                            onPressed: () {
-                              if (widget.kiyal.contact?[index].type == 'chat') {
-                                context.read<HomeChatCubit>().fetchMessages(
-                                      context.l10n.initial_message,
-                                      chatId: widget.kiyal.name ?? '',
-                                    );
+                      // const Spacer(),
+                      // ...List.generate(
+                      //   widget.kiyal.contact?.length ?? 0,
+                      //   (index) => Padding(
+                      //     padding: const EdgeInsets.only(left: 8),
+                      //     child: CstIconButton(
+                      //       onPressed: () {
+                      //         if (widget.kiyal.contact?[index].type == 'chat') {
+                      //           context.read<HomeChatCubit>().fetchMessages(
+                      //                 context.l10n.initial_message,
+                      //                 chatId: widget.kiyal.name ?? '',
+                      //               );
 
-                                Navigator.push(
-                                  context,
-                                  OnlineChatScreen.route(),
-                                );
-                              }
-                            },
-                            imagePath: contactOptions[
-                                    widget.kiyal.contact![index].type ?? '']
-                                ?.iconPath,
-                          ),
-                        ),
-                      ),
+                      //           Navigator.push(
+                      //             context,
+                      //             OnlineChatScreen.route(),
+                      //           );
+                      //         }
+                      //       },
+                      //       imagePath: contactOptions[
+                      //               widget.kiyal.contact![index].type ?? '']
+                      //           ?.iconPath,
+                      //     ),
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),
                 const SizedBox(height: 20),
                 _ListContent(
-                  text: widget.kiyal.roomSizeName ?? '',
+                  text:
+                      "${OfficePremesisRepository().getFlat(widget.kiyal, l10) ?? ''} м²",
                   iconPath: AppIcon.homeHashtag,
+                  withIcon: true,
                 ),
                 const SizedBox(height: 10),
                 _ListContent(
-                  text: widget.kiyal.address?.name ?? '',
+                  text: "Beshkek" ?? '',
+                  withIcon: true,
                   iconPath: AppIcon.locationMark,
                 ),
                 const SizedBox(height: 16),
@@ -188,7 +197,9 @@ class _OfficePremisesDetailsScreenState
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Text(
-                    widget.kiyal.description ?? '',
+                    OfficePremesisRepository()
+                            .getProductDescription(widget.kiyal, l10) ??
+                        '',
                     style: AppTextStyle.s16W400.copyWith(
                       color: AppColors.lightGray,
                     ),
@@ -206,20 +217,48 @@ class _OfficePremisesDetailsScreenState
                 Wrap(
                   runSpacing: 10,
                   children: [
-                    ...widget.kiyal.amenities?.map(
-                          (amenity) => _ListContent(
-                            isAminity: true,
-                            text: aminityOptions(context)[amenity.id ?? '']
-                                    ?.text ??
-                                '',
-                            iconPath: aminityOptions(context)[amenity.id ?? '']
-                                    ?.iconPath ??
-                                '',
-                            color: AppColors.primaryColor,
-                            textStyle: AppTextStyle.s16W400,
-                          ),
-                        ) ??
-                        [],
+                    ...List.generate(
+                      OfficePremesisRepository()
+                          .getConvenince(widget.kiyal, l10)
+                          .length,
+                      (index) => _ListContent(
+                        isAminity: true,
+                        text: OfficePremesisRepository()
+                                .getConvenince(widget.kiyal, l10)[index] ??
+                            '',
+                        iconPath: "" ?? '',
+                        color: AppColors.primaryColor,
+                        textStyle: AppTextStyle.s16W400,
+                      ),
+                    ),
+                    ...List.generate(
+                      OfficePremesisRepository()
+                          .getfeatures(widget.kiyal, l10)
+                          .length,
+                      (index) => _ListContent(
+                        isAminity: true,
+                        text: OfficePremesisRepository()
+                                .getfeatures(widget.kiyal, l10)[index] ??
+                            '',
+                        iconPath: "assets/svg/kitchen.svg" ?? '',
+                        color: AppColors.primaryColor,
+                        textStyle: AppTextStyle.s16W400,
+                      ),
+                    ),
+                    ...List.generate(
+                      OfficePremesisRepository()
+                          .getCondition(widget.kiyal, l10)
+                          .length,
+                      (index) => _ListContent(
+                        isAminity: true,
+                        text: OfficePremesisRepository()
+                                .getCondition(widget.kiyal, l10)[index] ??
+                            '',
+                        iconPath: "assets/svg/kitchen.svg" ?? '',
+                        color: AppColors.primaryColor,
+                        textStyle: AppTextStyle.s16W400,
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 10),
@@ -248,7 +287,7 @@ class _OfficePremisesDetailsScreenState
                   ),
                   const SizedBox(height: 5),
                   Text(
-                    '45 000 KGS',
+                    '${OfficePremesisRepository().getPrice(widget.kiyal, l10)} KGS',
                     style: AppTextStyle.s19W400.copyWith(
                       color: AppColors.darkBlue,
                     ),
@@ -261,7 +300,7 @@ class _OfficePremisesDetailsScreenState
               child: CstButton(
                 text: l10.rent,
                 onPressed: () async {
-                  await onRent();
+                  await onRent(widget.kiyal,l10);
                 },
               ),
             ),
@@ -271,19 +310,19 @@ class _OfficePremisesDetailsScreenState
     );
   }
 
-  Future<void> onRent() async {
+  Future<void> onRent(ProductsListModel kiyal,AppLocalizations currentLang) async {
     final hiveService = getIt<HiveService>();
     final userName = hiveService.getUser?.fulllName;
     final order = OrdersModel(
-      productName: widget.kiyal.name ?? '',
-      productInfo: widget.kiyal.description ?? '',
-      size: widget.kiyal.roomSizeName ?? '',
-      price: widget.kiyal.price ?? 0,
+      productName:  OfficePremesisRepository().getProductName(kiyal, currentLang) ?? '',
+      productInfo:  OfficePremesisRepository().getProductDescription(kiyal, currentLang) ?? '',
+      size: OfficePremesisRepository().getFlat(kiyal, currentLang)?? '',
+      price: int.parse(OfficePremesisRepository().getPrice(kiyal, currentLang)??"0") ?? 0,
       rentalPeriodFromDate: DateTime.now().formatInStyle('dd/MM/yyyy'),
       rentalPeriodToDate: DateTime.now()
           .add(const Duration(days: 30))
           .formatInStyle('dd/MM/yyyy'),
-      address: widget.kiyal.address?.name ?? '',
+      address: "Beshkek" ?? '',
       date: DateTime.now().formatInStyle('dd/MM/yyyy HH:mm'),
       orderNumber: widget.productId,
     );
@@ -303,14 +342,15 @@ class _OfficePremisesDetailsScreenState
 }
 
 class _ListContent extends StatelessWidget {
-  const _ListContent({
-    required this.iconPath,
-    required this.text,
-    super.key,
-    this.color,
-    this.textStyle,
-    this.isAminity = false,
-  });
+  const _ListContent(
+      {required this.iconPath,
+      required this.text,
+      super.key,
+      this.color,
+      this.textStyle,
+      this.isAminity = false,
+      this.withIcon = false});
+  final bool withIcon;
   final String iconPath;
   final String text;
   final Color? color;
@@ -325,13 +365,14 @@ class _ListContent extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomImageView(
-            imagePath: iconPath,
-            width: 24,
-            height: 24,
-            color: color,
-          ),
-          const SizedBox(width: 10),
+          if (withIcon)
+            CustomImageView(
+              imagePath: iconPath,
+              width: 24,
+              height: 24,
+              color: color,
+            ),
+          if (withIcon) const SizedBox(width: 10),
           if (isAminity)
             Text(
               text,

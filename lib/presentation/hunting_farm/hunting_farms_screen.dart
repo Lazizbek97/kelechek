@@ -71,11 +71,11 @@ class HuntingFarmsScreen extends StatelessWidget {
                             HuntingFilterPayload.initial(),
                       ),
                     ).then((value) {
-                      if (value != null) {
-                        context
-                            .read<HuntingRentalCubit>()
-                            .filter(value as HuntingFilterPayload);
-                      }
+                      // if (value != null) {
+                      //   context
+                      //       .read<HuntingRentalCubit>()
+                      //       .filter(value as HuntingFilterPayload);
+                      // }
                     });
                     // Navigator.push(context, UserProfileScreen.route());
                   },

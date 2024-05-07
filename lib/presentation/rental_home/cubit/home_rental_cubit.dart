@@ -26,6 +26,8 @@ class HomeRentalCubit extends Cubit<HomeRentalState> {
     );
     try {
       final response = await _rentalHomeRepository.getRentalHomesList();
+    
+      print("successssssssssssssss<><><><><><><><><><");
       emit(
         state.copyWith(
           isLoading: false,

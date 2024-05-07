@@ -50,6 +50,7 @@ class OfficePremisesHomeCubit extends Cubit<OfficePremisesHomeState> {
       const OfficePremisesHomeState(status: OfficeHomeStatus.loading),
     );
     final response = await _repository.getOfficePremesisList();
+
     response.fold(
       (l) {
         log('error loading office premises ->>>> ${(l as ApiException).message}');

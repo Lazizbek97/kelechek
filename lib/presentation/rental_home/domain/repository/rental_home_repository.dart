@@ -3,11 +3,14 @@ import 'dart:developer';
 
 import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kelechek/data/main_api.dart';
 
 import 'package:kelechek/presentation/rental_home/domain/models/rental_homes_list.dart';
 import 'package:kelechek/presentation/rental_home_with_service/domain/models/rental_homes_and_service_list.dart';
 
+import '../../../../di/injection.dart';
 import '../../../hunting_farm/domain/models/hunting_rental_list.dart';
+import '../../../hunting_farm/domain/models/rental_hunting_model.dart';
 import '../../../kindergardens/domain/models/kindergarden_list_md.dart';
 import '../../../rent_office_premises/domain/model/office_premesis_md.dart';
 
@@ -69,12 +72,13 @@ class RentalHomeRepository {
     }
   }
 
-    Future<List<RentalHomeAndServiceMd>> getrentalHomeServices() async {
+  Future<List<RentalHomeAndServiceMd>> getrentalHomeServices() async {
     try {
-      final response =
-          await rootBundle.loadString('assets/demo_content/rental-house-with-service.json');
+      final response = await rootBundle
+          .loadString('assets/demo_content/rental-house-with-service.json');
       final kiyalListMd = (jsonDecode(response) as List<dynamic>)
-          .map((e) => RentalHomeAndServiceMd.fromJson(e as Map<String, dynamic>))
+          .map(
+              (e) => RentalHomeAndServiceMd.fromJson(e as Map<String, dynamic>))
           .toList();
       return kiyalListMd;
     } catch (e) {
@@ -82,4 +86,5 @@ class RentalHomeRepository {
       throw Exception('Failed to load office premises');
     }
   }
+
 }
