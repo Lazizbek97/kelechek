@@ -67,7 +67,9 @@ class _OrderWidgetState extends State<OrderWidget> {
           ),
           const SizedBox(height: 10),
           Text(
-            widget.order.products?.first.entity?.title ?? '',
+            (widget.order.products ?? []).isEmpty
+                ? ''
+                : widget.order.products!.first.entity?.title ?? '',
             style: AppTextStyle.s10.copyWith(
               fontWeight: FontWeight.w400,
               color: isTapped ? AppColors.white : AppColors.lightGray,

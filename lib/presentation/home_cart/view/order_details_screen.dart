@@ -41,7 +41,9 @@ class OrderDetailsScreen extends StatelessWidget {
               const SizedBox(height: 20),
               _ContentItemWidget(
                 title: l10n.product,
-                value: order.products?.first.entity?.title ?? '',
+                value: (order.products ?? []).isEmpty
+                    ? ''
+                    : order.products?.first.entity?.title ?? '',
               ),
               const SizedBox(height: 16),
               const Divider(),
